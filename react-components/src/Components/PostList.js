@@ -14,7 +14,8 @@ class PostList extends React.Component {
 
   onClick() {
     const { counter } = this.state;
-    this.setState({ counter: this.state.counter + 10 });
+    if(this.state.counter < 100) {this.setState({ counter: this.state.counter + 10 });}
+    else {this.setState({ counter: this.state.counter + 0 });}
   }
 
   render() {
