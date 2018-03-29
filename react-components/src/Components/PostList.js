@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostListItem from "./PostListItem.js";
+import MoreButton from "./MoreButton.js";
 import data from '../data.js';
 import '../App.css';
 
@@ -21,7 +22,7 @@ class PostList extends React.Component {
   		<div>
         <div>Users ask: <span id = "name">{this.state.counter}</span></div>
         <PostListItem count = {this.state.counter} />
-        <button onClick={this.onClick}>More!</button>
+        <MoreButton click = {this.onClick} />
       </div>
   	)
    }
