@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PostListItem from "./PostListItem.js";
 import MoreButton from "./MoreButton.js";
-import data from '../data.js';
 import '../App.css';
 
 let counter = 10;
