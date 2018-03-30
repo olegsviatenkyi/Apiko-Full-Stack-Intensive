@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Header from "./Components/Header.js";
 import PostList from "./Components/PostList.js";
-import PostListItem from "./Components/PostListItem.js";
 
 
 class App extends Component {
