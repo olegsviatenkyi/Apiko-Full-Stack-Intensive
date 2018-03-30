@@ -3,7 +3,6 @@ import PostListItem from "./PostListItem.js";
 import MoreButton from "./MoreButton.js";
 import '../App.css';
 
-let counter = 10;
 class PostList extends React.Component {
   constructor() {
     super();
