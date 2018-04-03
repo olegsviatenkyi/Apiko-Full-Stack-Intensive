@@ -6,7 +6,7 @@ const Header = () => {
 	<header className="App-header">
 		<img src={logo} className="App-logo" alt="logo" />
 		<h1 className="App-title">Full-Stack Intensive</h1>
-		<h2>React. Components</h2>
+		<h2>React. Forms</h2>
 	</header>
 	);
 };
