@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import data from '../data.js';
+import List from './life-cycle.js';
 import styled from 'styled-components';
-
-const Li = styled.li`
-	background-color: #b3e6ff;
-	border: 2px solid black;
-	border-radius: 5px;
-	box-shadow: 0 3px 8px gray;
-	list-style-type: none;
-	padding: 5px;
-`;
+import { lifecycle } from 'recompose';
 
 const Div =styled.div`
 	width: 70%;
@@ -67,16 +60,10 @@ class PostListItem extends React.Component {
       );
     }, 5000);
   }
-  shouldComponentUpdate(nextProps, nextState) {
-    return ( 
-    	this.props.count !== nextProps.count ||
-    	this.props.search !== nextProps.search ||
-    	this.state.posts.map(element => element.title) !== nextState.posts.map(element => element.title)  
-    )
-  }
+
   render() {
     const { posts, isLoading, } = this.state;
-    const {count, search} = this.props;
+    const {count, search, k} = this.props;
     if (isLoading) {
     	return <div><H3>Loading...</H3><Loader></Loader></div>;
     }
@@ -84,10 +71,7 @@ class PostListItem extends React.Component {
     	return (
 	      <div>
 	        <ul>{posts.slice(0, count).map(element => 
-	        	<Div key={element.id}>
-	        		<Li key={element.id}>{element.title}</Li>
-	        		<br />
-	        	</Div>)}
+	        	<List k = {element.id} key={element.id}>{element.title}</List>)}
 	        </ul>
 	      </div>
     	);
@@ -106,11 +90,7 @@ class PostListItem extends React.Component {
 				(dataSearchNew.length === 0) ? 
 				(<Div>No items found</Div>) :
 					dataSearchNew.slice(0, count).map((element, i) => (
-						(<Div key = {i}>
-							<Li  key={i}>{element}
-							</Li>
-							<br />
-						</Div>)
+						(<List k={i} key={i}>{element}</List>)
 					))
 			)
 		}
