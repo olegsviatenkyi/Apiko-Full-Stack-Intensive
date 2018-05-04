@@ -11,11 +11,11 @@ export default class App extends React.Component {
 	constructor(props) {
     super(props)
     this.state = { count: 0 }
-  } 
+  }
   onPress = () => {
     this.setState({
       count: this.state.count+1
-    }) 
+    })
   }
   onPress1 = () => {
     this.setState({
@@ -35,7 +35,7 @@ export default class App extends React.Component {
         <TouchableHighlight
          style={styles.buttonMinus}
          onPress={this.onPress1}
-        > 
+        >
          <Text> Minus </Text>
         </TouchableHighlight>
         <View style={[styles.countContainer]}>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#32CD32',
     borderColor: 'black',
-    borderStyle: 'solid', 
+    borderStyle: 'solid',
     borderWidth: 2,
     padding: 10
   },
