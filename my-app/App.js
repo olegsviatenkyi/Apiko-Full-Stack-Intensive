@@ -7,24 +7,22 @@ import {
   View,
 } from 'react-native'
 
-class App extends Component {
-  constructor(props) {
+export default class App extends React.Component {
+	constructor(props) {
     super(props)
     this.state = { count: 0 }
-  }
-
+  } 
   onPress = () => {
     this.setState({
       count: this.state.count+1
-    })
+    }) 
   }
   onPress1 = () => {
     this.setState({
       count: this.state.count-1
     })
   }
-
- render() {
+  render() {
     return (
       <View style={styles.container}>
         <TouchableHighlight
@@ -33,11 +31,11 @@ class App extends Component {
         >
          <Text> Plus </Text>
         </TouchableHighlight>
-        <br />
+        <Text />
         <TouchableHighlight
          style={styles.buttonMinus}
          onPress={this.onPress1}
-        >
+        > 
          <Text> Minus </Text>
         </TouchableHighlight>
         <View style={[styles.countContainer]}>
@@ -46,23 +44,21 @@ class App extends Component {
           </Text>
         </View>
       </View>
-    )
+    );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10
   },
-
   buttonPlus: {
     alignItems: 'center',
     backgroundColor: '#32CD32',
     borderColor: 'black',
-    borderStyle: 'solid',
-    borderWidth: '2',
+    borderStyle: 'solid', 
+    borderWidth: 2,
     padding: 10
   },
   buttonMinus: {
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF0000',
     borderColor: 'black',
     borderStyle: 'solid',
-    borderWidth: '2',
+    borderWidth: 2,
     padding: 10
   },
   countContainer: {
@@ -81,5 +77,3 @@ const styles = StyleSheet.create({
     color: 'blue'
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
